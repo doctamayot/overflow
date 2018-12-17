@@ -1,0 +1,10 @@
+<% if model.errors.any? %>
+  <div class="alert alert-danger">
+    <%= t(:form_has_error, scope: :custom) %> <%= pluralize(model.errors.count, "error", "errores") %>:
+    <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%= form_with model: [commentable, commentable.comments.new], url: url_path do |form| %>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <% if commentable.is_a? Question %>
+              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2" %>
+            <% elsif commentable.is_a? Answer %>
+              <%= form.text_area :body, class: "form-control", cols: "68", rows: "2" %>
+            <% end %>
+          </div>
+        </td>
+        <td>
+          <%= form.submit "Comentar", class: "btn btn-primary" %>
+        </td>
+      </tr>
+      <tr>
+       
+      </tr>
+    </tbody>
+  </table>
+<% end %>

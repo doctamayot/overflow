@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="jumbotron">
+        <h1><%= @question.title %></h1>
+        <p><%= markdown @question.body %></p>
+        <div>
+         <%= render 'votes/votes', votable: @question, c_url_path: question_votes_path(@question),  d_url_path: question_vote_path(@question) %>
+        </div>
+        <div class="alert alert-warning">
+          Publicado por <%= @question.user.email %> el <%= (@question.created_at.strftime("%d de %b del %Y a las %H:%M")) %>.
+        </div>
+      </div>
+      <%= render 'answers/form', question: @question, answer: @answer, action: "Publica tu respuesta" %>
+    </div>
+    <div class="col-sm-12">
+      <h3>Comentarios Pregunta</h3>
+      <%= render @question.comments %>
+    </div>
+    <div class="col-sm-12">
+      <% if signed_in? %>
+          <h2>Añade un comentario</h2>
+            <div>
+             <%= render 'comments/form', commentable: @question, url_path: question_comments_path(@question) %>
+      <% end %>
+    </div>
+  </div>
+</div>             
+    <div>
+      <div>
+        <h2><%= pluralize(@question.answers.count, 'Respuesta', 'Respuestas') %>:</h2>
+      </div>
+
+      <% if @question.answers.count > 0 %>
+        <%= render @answers %>
+      <% else %>
+        <%= render 'answers/no_answers' %>
+      <% end %>
+    </div>
+  </div>
+</div>

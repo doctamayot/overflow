@@ -1,0 +1,141 @@
+.questions {
+  float: left;
+  padding-top: 5px;
+  overflow: hidden;
+  width: 728px;
+  border-bottom: 1px solid #e4e6e8;
+  a {
+    color: #07C;
+    text-decoration: none;
+  }
+  &__stats {
+    float: left;
+    margin-top: 12px;
+    margin-right: 10px;
+    margin-left: 5px;
+    margin-bottom: 17px;
+    width: 70px;
+    vertical-align: top;
+  }
+  &__mini_counts {
+    font-size: 18px;
+    font-weight: 300;
+    color: #6a737c;
+    margin-bottom: 2px;
+  }
+  &__votes {
+    text-align: center;
+    height: 40px;
+    font-size: 11px;
+    color: #848d95;
+    margin-bottom: 8px;
+  }
+  &__answers {
+    text-align: center;
+    height: 40px;
+    font-size: 11px;
+    color: #848d95;
+  }
+  &__summary {
+    float: left;
+    width: 630px;
+    h3 {
+      display: block;
+      font-size: 15px;
+      line-height: 1.3;
+      margin-bottom: .35em;
+    }
+    p {
+      padding-bottom: 3px;
+      color: #3b4045;
+      margin-bottom: .35em;
+      margin-top: .35em;
+    }
+  }
+  &__hyperlink {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &__hyperlink:visited {
+    color: #005999;
+  }
+  &__actions {
+    float: left;
+    font-size: 12px;
+    color: #9199a1;
+    margin-top: .35em;
+    margin-bottom: 1em;
+  }
+  &__started {
+    float: right;
+    font-size: 12px;
+    color: #9199a1;
+    margin-top: .35em;
+    margin-bottom: 1em;
+  }
+}
+
+.question {
+  width: 728px;
+  box-sizing: border-box;
+  h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  a {
+    color: #07C;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  table {
+      border-spacing: 0;
+      border-collapse: collapse;
+  }
+  &__cell {
+    vertical-align: top;
+  }
+  &__header {
+    border-bottom: 1px solid #e4e6e8;
+    clear: both;
+    padding: 2px 0px;
+    h1 {
+      margin-bottom: .5em;
+    }
+    h2 {
+      font-weight: 400;
+      color: #3b4045;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+  }
+  &__body {
+    display: inline-block;
+    width: 670px;
+    p {
+      font-size: 15px;
+    }
+  }
+  &__footer {
+    margin-bottom: 4px;
+    width: 100%;
+  }
+  &__actions {
+    padding-top: 2px;
+    font-size: 12px;
+    * {
+      display: inline-block;
+    }
+    a {
+      padding: 0 3px 2px;
+      color: #848d95;
+    }
+  }
+  &__form {
+    margin-top: 15px;
+  }
+}

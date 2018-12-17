@@ -1,0 +1,17 @@
+ <% if votable.voted_by? current_user %>
+      <%= link_to d_url_path, method: :delete do %>
+          <span class='glyphicon glyphicon-thumbs-down'></span>
+      <% end %>
+  <% else %>
+      <%= link_to c_url_path, method: :post do %>
+          <span class='glyphicon glyphicon-thumbs-up'></span>
+       <% end %>
+  <% end %>
+      
+    
+  <% if votable.votes.count == 1 %>
+    Quitar voto
+
+  <% else %> 
+    Votar    
+  <% end %>

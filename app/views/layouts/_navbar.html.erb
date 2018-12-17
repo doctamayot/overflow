@@ -1,0 +1,47 @@
+<!-- <% if flash[:notice] %>
+          <div class="alert alert-info"><%= flash[:notice] %>
+          </div>
+        <% end %>  -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-10 col-sm-offset-1">
+                  <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <%= link_to "StarkOverFlow", root_path, class: "navbar-brand" %>
+                </div>
+                  <%= form_tag({controller: "/questions", action: "search"},
+                               method: "get",
+                               class:  "navbar-form navbar-left",
+                               enforce_utf8: false) do %>
+                    <div class="form-group">
+                      <%= text_field_tag :q, nil, class: 'form-control', placeholder: 'Buscar...'%>
+                      <%# submit_tag "Search", name: nil %>
+                    </div>
+                    <%end%>
+                  <ul class="nav navbar-right">
+                    <% if signed_in? %>
+                    <span class="h6">Ingresado como</span> <span class="text-success"><%= current_user.email %>.</span>
+                      <p><%= link_to "Salir", destroy_user_session_path, class: "text-danger", :method => :delete %></p>
+                    <% else %>
+                      <li class="nav-item active">
+                      <%= link_to "Registrate", new_user_registration_path, class: "navbar-nav text-danger"  %>  <%= link_to "Ingresar", new_user_session_path, class: "navbar-nav text-success" %>
+                      </li>           
+                    <% end %>
+                    
+                  </ul>  
+                  </div>
+               </div>
+             </div>
+            </nav>      
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+
+    <% if signed_in?  %>
+    <div > Comentado por <%= comment.user.email %> el <%= (comment.created_at.strftime("%d de %b del %Y a las %H:%M")) %>.</div>
+      <% if comment.commentable.is_a? Question %>        
+        <div class="alert alert-success">
+          <%= comment.body%> 
+        </div>              
+      <% elsif comment.commentable.is_a? Answer %>
+      <div class="alert alert-success"> 
+        <%=comment.body %>
+      </div>  
+      <% end %>
+    <% end %>
+  
+

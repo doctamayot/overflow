@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div >
+      <h2><%= title %></h2>
+    </div>
+    <div>
+      <%= form_with model: question, local: true do |f| %>
+        <%= render 'shared/error_messages', model: question %>
+
+        <div >
+          <%= f.label :title, "Titulo:" %>
+          <%= f.text_field :title, class: "form-control", autofocus: true %>
+        </div>
+
+        <div>
+          <%= f.label :body, "Descripción:" %>
+          <%= f.text_area :body, rows: 10, class: "form-control" %>
+        </div>
+
+        <div >
+          <%= link_to "Cancelar", questions_path, class: "btn btn-default" %>
+          <%= f.submit action, class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

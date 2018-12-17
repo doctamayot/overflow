@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" >
+      <div class="jumbotron">
+        <p>
+          <%= markdown answer.body %>
+        </p>
+            <%= render 'votes/votes', votable: answer,
+                                      c_url_path: question_answer_votes_path(answer.question, answer),
+                                      d_url_path: question_answer_vote_path(answer.question, answer) %>
+          <div class="alert alert-warning"> 
+            Respuesta por <%= answer.user.email %> el <%= (answer.created_at.strftime("%d de %b del %Y a las %H:%M")) %>.</div>            </div>
+      </div>          
+      <div>
+        <%= render answer.comments %>
+      </div>
+      <% if signed_in? %>
+        <div>
+           <h2>Añade un comentario a la respuesta</h2>
+        </div>
+        <div >
+           <%= render 'comments/form', commentable: answer, url_path: question_answer_comments_path(answer.question, answer) %>
+        </div>
+      <% end %>
+      <br>
+  </div>
+</div>
